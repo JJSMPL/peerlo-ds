@@ -60,14 +60,14 @@
   --color-blue-950: #060f20;
 
   /* Neutral scale (from Figma primitives — warm gray) */
-  --color-neutral-50: #faf9f7;
+  --color-neutral-50: #faf9f8;
   --color-neutral-100: #f5f3f0;
-  --color-neutral-200: #d7d5d3;
-  --color-neutral-300: #b8b7b5;
-  --color-neutral-400: #9a9998;
-  --color-neutral-500: #7c7b7a;
-  --color-neutral-600: #5d5d5d;
-  --color-neutral-700: #3f3f3f;
+  --color-neutral-200: #d7d6d3;
+  --color-neutral-300: #bab8b6;
+  --color-neutral-400: #9c9b99;
+  --color-neutral-500: #7f7d7c;
+  --color-neutral-600: #61605f;
+  --color-neutral-700: #444242;
   --color-neutral-800: #262525;
   --color-neutral-900: #141313;
   --color-neutral-950: #0a0a09;
@@ -117,28 +117,28 @@
   /* Background */
   --bg-page:             #f5f3f0;  /* Neutral/100-paper */
   --bg-surface:          #ffffff;  /* Common/white */
-  --bg-surface-1:        #faf9f7;  /* Neutral/50 */
+  --bg-surface-1:        #faf9f8;  /* Neutral/50 */
   --bg-surface-2:        #f5f3f0;  /* Neutral/100-paper */
-  --bg-disabled:         #e8e6e3;  /* Neutral/200 */
-  --bg-inverse:          #3f3f3f;  /* Neutral/700 */
+  --bg-disabled:         #d7d6d3;  /* Neutral/200 */
+  --bg-inverse:          #444242;  /* Neutral/700 */
   --bg-brand:            #388566;  /* Brand-green/500-primary */
   --bg-brand-secondary:  #6ccbec;  /* Brand-blue/300-secondary */
 
   /* Text */
-  --text-primary:    #3f3f3f;  /* Neutral/700 */
-  --text-secondary:  #5d5d5d;  /* Neutral/600 */
-  --text-tertiary:   #7c7b7a;  /* Neutral/500 */
-  --text-disabled:   #9a9998;  /* Neutral/400 */
+  --text-primary:    #444242;  /* Neutral/700 */
+  --text-secondary:  #61605f;  /* Neutral/600 */
+  --text-tertiary:   #7f7d7c;  /* Neutral/500 */
+  --text-disabled:   #9c9b99;  /* Neutral/400 */
   --text-inverse:    #ffffff;  /* Common/white */
   --text-brand:      #388566;  /* Brand-green/500-primary */
   --text-error:      #dc2626;  /* Utility/red/600 */
 
   /* Stroke */
   --stroke-soft:            #f5f3f0;  /* Neutral/100-paper */
-  --stroke-default:         #e8e6e3;  /* Neutral/200 */
-  --stroke-strong:          #9a9998;  /* Neutral/400 */
-  --stroke-disabled:        #b8b7b5;  /* Neutral/300 */
-  --stroke-inverse:         #3f3f3f;  /* Neutral/700 */
+  --stroke-default:         #d7d6d3;  /* Neutral/200 */
+  --stroke-strong:          #9c9b99;  /* Neutral/400 */
+  --stroke-disabled:        #bab8b6;  /* Neutral/300 */
+  --stroke-inverse:         #444242;  /* Neutral/700 */
   --stroke-brand:           #388566;  /* Brand-green/500-primary */
   --stroke-brand-secondary: #6ccbec;  /* Brand-blue/300-secondary */
   --stroke-error:           #ef4444;  /* Utility/red/500 */
