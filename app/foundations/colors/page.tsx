@@ -1,55 +1,63 @@
 import { Sidebar } from "@/components/docs/sidebar"
 
-const palette = [
+interface Swatch {
+  step: string
+  hex: string
+  label?: string
+  brandName?: string   // named brand color — shown as pill badge
+  isPrimary?: boolean  // dot marker for the primary anchor
+}
+
+const palette: { name: string; description: string; swatches: Swatch[] }[] = [
   {
     name: "Brand Green",
-    description: "Primary brand color. Used for CTAs, active states, and brand moments.",
+    description: "Primary brand color. Steps 100, 200, 500, 600 are fixed brand anchors — all other steps are interpolated to blend smoothly between them.",
     swatches: [
-      { step: "50", hex: "#e3fcf2", label: "Soft fill, card backgrounds" },
-      { step: "100", hex: "#c1f7e1", label: "" },
-      { step: "200", hex: "#bde1d2", label: "" },
-      { step: "300", hex: "#8dc5ac", label: "" },
-      { step: "400", hex: "#5ea589", label: "" },
-      { step: "500", hex: "#388566", label: "Primary brand" },
-      { step: "600", hex: "#305043", label: "" },
-      { step: "700", hex: "#223c30", label: "Hover state" },
-      { step: "800", hex: "#162a21", label: "" },
-      { step: "900", hex: "#0c1a14", label: "CTA button (#13281c)" },
-      { step: "950", hex: "#060e0b", label: "" },
+      { step: "50",  hex: "#e7f8f1", label: "Soft fill, card backgrounds" },
+      { step: "100", hex: "#c1f7e1", brandName: "Bright Forest" },
+      { step: "200", hex: "#bde1d2", brandName: "Pastel Forest" },
+      { step: "300", hex: "#86caae" },
+      { step: "400", hex: "#54b58d" },
+      { step: "500", hex: "#388566", brandName: "Forest-primary", isPrimary: true, label: "Primary brand" },
+      { step: "600", hex: "#305043", brandName: "Evening Forest" },
+      { step: "700", hex: "#273f35" },
+      { step: "800", hex: "#1e2f28" },
+      { step: "900", hex: "#121c18" },
+      { step: "950", hex: "#080c0a" },
     ],
   },
   {
     name: "Brand Blue",
     description: "Secondary brand color. Used for seeker flow, cards, and secondary actions.",
     swatches: [
-      { step: "50", hex: "#e9fcff", label: "" },
-      { step: "100", hex: "#cbf8ff", label: "" },
-      { step: "200", hex: "#a7eaff", label: "" },
+      { step: "50",  hex: "#e9fcff" },
+      { step: "100", hex: "#cbf8ff" },
+      { step: "200", hex: "#a7eaff" },
       { step: "300", hex: "#6ccbec", label: "Secondary / seeker blue" },
-      { step: "400", hex: "#7abde4", label: "" },
-      { step: "500", hex: "#86aed8", label: "" },
-      { step: "600", hex: "#25609f", label: "" },
-      { step: "700", hex: "#1d4a7e", label: "" },
-      { step: "800", hex: "#143460", label: "" },
-      { step: "900", hex: "#0c2040", label: "" },
-      { step: "950", hex: "#060f20", label: "" },
+      { step: "400", hex: "#7abde4" },
+      { step: "500", hex: "#86aed8" },
+      { step: "600", hex: "#25609f" },
+      { step: "700", hex: "#1d4a7e" },
+      { step: "800", hex: "#143460" },
+      { step: "900", hex: "#0c2040" },
+      { step: "950", hex: "#060f20" },
     ],
   },
   {
     name: "Neutral",
     description: "Warm gray scale. Used for text, borders, backgrounds, and disabled states.",
     swatches: [
-      { step: "50", hex: "#faf9f7", label: "Page background" },
+      { step: "50",  hex: "#faf9f7", label: "Page background" },
       { step: "100", hex: "#f5f3f0", label: "Paper / muted background" },
-      { step: "200", hex: "#d7d5d3", label: "Borders" },
-      { step: "300", hex: "#b8b7b5", label: "" },
-      { step: "400", hex: "#9a9998", label: "" },
+      { step: "200", hex: "#e8e6e3", label: "Borders" },
+      { step: "300", hex: "#b8b7b5" },
+      { step: "400", hex: "#9a9998" },
       { step: "500", hex: "#7c7b7a", label: "Muted text" },
-      { step: "600", hex: "#5d5d5d", label: "" },
-      { step: "700", hex: "#3f3f3f", label: "" },
-      { step: "800", hex: "#262525", label: "" },
+      { step: "600", hex: "#5d5d5d" },
+      { step: "700", hex: "#3f3f3f" },
+      { step: "800", hex: "#262525" },
       { step: "900", hex: "#141313", label: "Primary text" },
-      { step: "950", hex: "#0a0a09", label: "" },
+      { step: "950", hex: "#0a0a09" },
     ],
   },
 ]
@@ -90,16 +98,55 @@ function isDark(hex: string) {
   return (r * 299 + g * 587 + b * 114) / 1000 < 128
 }
 
+function SwatchCard({ s }: { s: Swatch }) {
+  const dark = isDark(s.hex)
+  return (
+    <div className="flex flex-col rounded-xl border border-border overflow-hidden w-[120px] shrink-0">
+      {/* Color block */}
+      <div className="relative h-20" style={{ backgroundColor: s.hex }}>
+        {/* Primary dot marker */}
+        {s.isPrimary && (
+          <div className="absolute top-2 right-2 size-2.5 rounded-full bg-white/60" />
+        )}
+        {/* Brand name pill */}
+        {s.brandName && (
+          <div className="absolute bottom-2 left-2">
+            <span
+              className="inline-block px-2 py-0.5 rounded-full text-[9px] leading-tight whitespace-nowrap font-medium"
+              style={{
+                backgroundColor: "rgba(0,0,0,0.28)",
+                color: "#ffffff",
+                fontFamily: "var(--font-ui, 'Geist', sans-serif)",
+              }}
+            >
+              {s.brandName}
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Text */}
+      <div className="px-2.5 py-2 bg-card flex flex-col gap-0.5">
+        <p className="text-xs font-mono font-medium text-foreground">{s.step}</p>
+        <p className="text-[10px] font-mono text-muted-foreground uppercase">{s.hex}</p>
+        {s.label && (
+          <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">{s.label}</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function ColorsPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 px-10 py-10 max-w-4xl">
+      <main className="flex-1 px-10 py-10 max-w-5xl">
         <div className="mb-10">
           <p className="text-sm text-muted-foreground mb-1 font-mono">foundations / colors</p>
           <h1 className="text-3xl font-semibold text-foreground mb-3">Colors</h1>
           <p className="text-muted-foreground leading-relaxed">
-            Two brand scales (green + blue) and a warm neutral gray. All values extracted directly from the Figma variables.
+            Two brand scales (green + blue) and a warm neutral gray. Named pills indicate fixed brand anchor colors — all other steps are interpolated to blend smoothly between them.
           </p>
         </div>
 
@@ -108,45 +155,9 @@ export default function ColorsPage() {
           <section key={group.name} className="mb-12">
             <h2 className="text-xl font-semibold text-foreground mb-1">{group.name}</h2>
             <p className="text-sm text-muted-foreground mb-5">{group.description}</p>
-            <div className="flex rounded-2xl overflow-hidden border border-border">
+            <div className="flex flex-wrap gap-3">
               {group.swatches.map((s) => (
-                <div
-                  key={s.step}
-                  className="flex-1 flex flex-col"
-                  style={{ backgroundColor: s.hex }}
-                >
-                  <div className="h-16" />
-                  <div
-                    className="px-2 py-2"
-                    style={{ backgroundColor: s.hex }}
-                  >
-                    <p
-                      className="text-xs font-mono font-medium"
-                      style={{ color: isDark(s.hex) ? "#ffffff" : "#141313" }}
-                    >
-                      {s.step}
-                    </p>
-                    <p
-                      className="text-xs font-mono opacity-70"
-                      style={{ color: isDark(s.hex) ? "#ffffff" : "#141313" }}
-                    >
-                      {s.hex}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* Labels */}
-            <div className="mt-3 flex flex-wrap gap-3">
-              {group.swatches.filter(s => s.label).map(s => (
-                <div key={s.step} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <span
-                    className="size-3 rounded-full border border-border"
-                    style={{ backgroundColor: s.hex }}
-                  />
-                  <span className="font-mono">{s.step}</span>
-                  <span>— {s.label}</span>
-                </div>
+                <SwatchCard key={s.step} s={s} />
               ))}
             </div>
           </section>
@@ -172,7 +183,7 @@ export default function ColorsPage() {
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2">
                         <span
-                          className="size-4 rounded border border-border"
+                          className="size-4 rounded border border-border shrink-0"
                           style={{ backgroundColor: row.value }}
                         />
                         <span className="font-mono text-xs">{row.value}</span>

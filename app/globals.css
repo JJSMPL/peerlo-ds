@@ -33,18 +33,18 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand Green scale (from Figma primitives) */
-  --color-green-50: #e3fcf2;
-  --color-green-100: #c1f7e1;
-  --color-green-200: #bde1d2;
-  --color-green-300: #8dc5ac;
-  --color-green-400: #5ea589;
-  --color-green-500: #388566;
-  --color-green-600: #305043;
-  --color-green-700: #223c30;
-  --color-green-800: #162a21;
-  --color-green-900: #0c1a14;
-  --color-green-950: #060e0b;
+  /* Brand Green scale — anchors: 100 (Bright Forest), 200 (Pastel Forest), 500 (Forest-primary), 600 (Evening Forest) */
+  --color-green-50:  #e7f8f1;
+  --color-green-100: #c1f7e1;  /* fixed: Bright Forest */
+  --color-green-200: #bde1d2;  /* fixed: Pastel Forest */
+  --color-green-300: #86caae;
+  --color-green-400: #54b58d;
+  --color-green-500: #388566;  /* fixed: Forest-primary */
+  --color-green-600: #305043;  /* fixed: Evening Forest */
+  --color-green-700: #273f35;
+  --color-green-800: #1e2f28;
+  --color-green-900: #121c18;
+  --color-green-950: #080c0a;
 
   /* Brand Blue scale (from Figma primitives) */
   --color-blue-50: #e9fcff;
