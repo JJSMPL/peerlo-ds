@@ -55,16 +55,32 @@ const palette = [
 ]
 
 const semantic = [
-  { token: "--primary", value: "#13281c", usage: "CTA button fill" },
-  { token: "--primary-foreground", value: "#ffffff", usage: "Button label on dark fill" },
-  { token: "--secondary", value: "#6ccbec", usage: "Seeker flow button / card" },
-  { token: "--background", value: "#faf9f7", usage: "Page background" },
-  { token: "--foreground", value: "#141313", usage: "Primary text" },
-  { token: "--muted", value: "#f5f3f0", usage: "Muted / paper background" },
-  { token: "--muted-foreground", value: "#7c7b7a", usage: "Secondary / placeholder text" },
-  { token: "--accent", value: "#e3fcf2", usage: "Soft green fill (green-50)" },
-  { token: "--border", value: "#d7d5d3", usage: "Default border" },
-  { token: "--destructive", value: "#dc2626", usage: "Error states" },
+  // Background
+  { token: "Background/Page",             value: "#f5f3f0", usage: "Screen / page background" },
+  { token: "Background/Surface",          value: "#ffffff", usage: "Card, sheet, modal" },
+  { token: "Background/Surface 1",        value: "#faf9f7", usage: "Subtle elevated surface" },
+  { token: "Background/Surface 2",        value: "#f5f3f0", usage: "Second-level surface" },
+  { token: "Background/Disabled",         value: "#e8e6e3", usage: "Disabled element fill" },
+  { token: "Background/Brand",            value: "#388566", usage: "Brand green fill" },
+  { token: "Background/Brand secondary",  value: "#6ccbec", usage: "Seeker blue fill" },
+  // Text
+  { token: "Text/Primary",   value: "#3f3f3f", usage: "Primary body & heading text" },
+  { token: "Text/Secondary", value: "#5d5d5d", usage: "Supporting / description text" },
+  { token: "Text/Tertiary",  value: "#7c7b7a", usage: "Placeholder & caption text" },
+  { token: "Text/Disable",   value: "#9a9998", usage: "Disabled text" },
+  { token: "Text/Inverse",   value: "#ffffff", usage: "Text on dark backgrounds" },
+  { token: "Text/Brand",     value: "#388566", usage: "Brand-coloured text" },
+  { token: "Text/Error",     value: "#dc2626", usage: "Error / destructive text" },
+  // Stroke
+  { token: "Stroke/Soft",             value: "#f5f3f0", usage: "Subtle divider" },
+  { token: "Stroke/Default",          value: "#e8e6e3", usage: "Default border" },
+  { token: "Stroke/Strong",           value: "#9a9998", usage: "Emphasis border" },
+  { token: "Stroke/Brand",            value: "#388566", usage: "Focused / active border" },
+  { token: "Stroke/Brand secondary",  value: "#6ccbec", usage: "Seeker flow border" },
+  { token: "Stroke/Error",            value: "#ef4444", usage: "Error border" },
+  // Button
+  { token: "Button/Primary/Solid/Default",  value: "#223c30", usage: "Primary CTA fill" },
+  { token: "Button/Secondary/Default",      value: "#6ccbec", usage: "Seeker CTA fill" },
 ]
 
 function isDark(hex: string) {

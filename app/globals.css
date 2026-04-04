@@ -111,44 +111,62 @@
 }
 
 /* ─── Peerlo Semantic Tokens (Light mode) ───────────────────────────── */
+/* Mirrors Figma "3. Token" collection — Neutral/xxx from "1. Primitive colors" */
 
 :root {
-  /* Page background = Neutral/50 */
-  --background: #faf9f7;
-  --foreground: #141313;
+  /* Background */
+  --bg-page:             #f5f3f0;  /* Neutral/100-paper */
+  --bg-surface:          #ffffff;  /* Common/white */
+  --bg-surface-1:        #faf9f7;  /* Neutral/50 */
+  --bg-surface-2:        #f5f3f0;  /* Neutral/100-paper */
+  --bg-disabled:         #e8e6e3;  /* Neutral/200 */
+  --bg-inverse:          #3f3f3f;  /* Neutral/700 */
+  --bg-brand:            #388566;  /* Brand-green/500-primary */
+  --bg-brand-secondary:  #6ccbec;  /* Brand-blue/300-secondary */
 
-  /* Card = white surface */
-  --card: #ffffff;
-  --card-foreground: #141313;
+  /* Text */
+  --text-primary:    #3f3f3f;  /* Neutral/700 */
+  --text-secondary:  #5d5d5d;  /* Neutral/600 */
+  --text-tertiary:   #7c7b7a;  /* Neutral/500 */
+  --text-disabled:   #9a9998;  /* Neutral/400 */
+  --text-inverse:    #ffffff;  /* Common/white */
+  --text-brand:      #388566;  /* Brand-green/500-primary */
+  --text-error:      #dc2626;  /* Utility/red/600 */
 
-  --popover: #ffffff;
-  --popover-foreground: #141313;
+  /* Stroke */
+  --stroke-soft:            #f5f3f0;  /* Neutral/100-paper */
+  --stroke-default:         #e8e6e3;  /* Neutral/200 */
+  --stroke-strong:          #9a9998;  /* Neutral/400 */
+  --stroke-disabled:        #b8b7b5;  /* Neutral/300 */
+  --stroke-inverse:         #3f3f3f;  /* Neutral/700 */
+  --stroke-brand:           #388566;  /* Brand-green/500-primary */
+  --stroke-brand-secondary: #6ccbec;  /* Brand-blue/300-secondary */
+  --stroke-error:           #ef4444;  /* Utility/red/500 */
 
-  /* Primary = dark green CTA (Brand-green/800 ≈ #13281c from brief) */
-  --primary: #13281c;
-  --primary-foreground: #ffffff;
+  /* Button */
+  --btn-primary:            #223c30;  /* Brand-green/700 */
+  --btn-primary-hover:      #305043;  /* Brand-green/600 */
+  --btn-secondary:          #6ccbec;  /* Brand-blue/300-secondary */
 
-  /* Secondary = Brand-blue/300 (seeker blue) */
-  --secondary: #6ccbec;
-  --secondary-foreground: #0c2040;
-
-  /* Muted = Neutral/100 */
-  --muted: #f5f3f0;
-  --muted-foreground: #7c7b7a;
-
-  /* Accent = Brand-green/50 (soft fill) */
-  --accent: #e3fcf2;
-  --accent-foreground: #223c30;
-
-  /* Destructive */
-  --destructive: #dc2626;
-
-  /* Borders */
-  --border: #d7d5d3;
-  --input: #d7d5d3;
-  --ring: #388566;
-
-  /* Base radius unit */
+  /* Shadcn compatibility aliases (used by existing shadcn components) */
+  --background:   var(--bg-page);
+  --foreground:   var(--text-primary);
+  --card:         var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover:      var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary:      var(--btn-primary);
+  --primary-foreground: var(--text-inverse);
+  --secondary:    var(--bg-brand-secondary);
+  --secondary-foreground: var(--text-primary);
+  --muted:        var(--bg-surface-2);
+  --muted-foreground: var(--text-tertiary);
+  --accent:       var(--bg-brand-secondary);
+  --accent-foreground: var(--text-primary);
+  --destructive:  var(--text-error);
+  --border:       var(--stroke-default);
+  --input:        var(--stroke-default);
+  --ring:         var(--stroke-brand);
   --radius: 0.75rem;
 }
 
