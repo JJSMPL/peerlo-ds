@@ -49,7 +49,7 @@ const palette: { name: string; description: string; swatches: Swatch[] }[] = [
     swatches: [
       { step: "50",  hex: "#faf9f8", label: "Page background" },
       { step: "100", hex: "#f5f3f0", label: "Paper / muted background" },
-      { step: "200", hex: "#d7d6d3", label: "Borders" },
+      { step: "200", hex: "#dddcda", label: "Borders" },
       { step: "300", hex: "#bab8b6" },
       { step: "400", hex: "#9c9b99" },
       { step: "500", hex: "#7f7d7c", label: "Muted text" },
@@ -68,7 +68,7 @@ const semantic = [
   { token: "Background/Surface",          value: "#ffffff", usage: "Card, sheet, modal" },
   { token: "Background/Surface 1",        value: "#faf9f8", usage: "Subtle elevated surface" },
   { token: "Background/Surface 2",        value: "#f5f3f0", usage: "Second-level surface" },
-  { token: "Background/Disabled",         value: "#d7d6d3", usage: "Disabled element fill" },
+  { token: "Background/Disabled",         value: "#dddcda", usage: "Disabled element fill" },
   { token: "Background/Brand",            value: "#388566", usage: "Brand green fill" },
   { token: "Background/Brand secondary",  value: "#6ccbec", usage: "Seeker blue fill" },
   // Text
@@ -81,7 +81,7 @@ const semantic = [
   { token: "Text/Error",     value: "#dc2626", usage: "Error / destructive text" },
   // Stroke
   { token: "Stroke/Soft",             value: "#f5f3f0", usage: "Subtle divider" },
-  { token: "Stroke/Default",          value: "#d7d6d3", usage: "Default border" },
+  { token: "Stroke/Default",          value: "#dddcda", usage: "Default border" },
   { token: "Stroke/Strong",           value: "#9c9b99", usage: "Emphasis border" },
   { token: "Stroke/Brand",            value: "#388566", usage: "Focused / active border" },
   { token: "Stroke/Brand secondary",  value: "#6ccbec", usage: "Seeker flow border" },

@@ -62,7 +62,7 @@
   /* Neutral scale (from Figma primitives — warm gray) */
   --color-neutral-50: #faf9f8;
   --color-neutral-100: #f5f3f0;
-  --color-neutral-200: #d7d6d3;
+  --color-neutral-200: #dddcda;
   --color-neutral-300: #bab8b6;
   --color-neutral-400: #9c9b99;
   --color-neutral-500: #7f7d7c;
@@ -119,7 +119,7 @@
   --bg-surface:          #ffffff;  /* Common/white */
   --bg-surface-1:        #faf9f8;  /* Neutral/50 */
   --bg-surface-2:        #f5f3f0;  /* Neutral/100-paper */
-  --bg-disabled:         #d7d6d3;  /* Neutral/200 */
+  --bg-disabled:         #dddcda;  /* Neutral/200 */
   --bg-inverse:          #444242;  /* Neutral/700 */
   --bg-brand:            #388566;  /* Brand-green/500-primary */
   --bg-brand-secondary:  #6ccbec;  /* Brand-blue/300-secondary */
@@ -135,7 +135,7 @@
 
   /* Stroke */
   --stroke-soft:            #f5f3f0;  /* Neutral/100-paper */
-  --stroke-default:         #d7d6d3;  /* Neutral/200 */
+  --stroke-default:         #dddcda;  /* Neutral/200 */
   --stroke-strong:          #9c9b99;  /* Neutral/400 */
   --stroke-disabled:        #bab8b6;  /* Neutral/300 */
   --stroke-inverse:         #444242;  /* Neutral/700 */
